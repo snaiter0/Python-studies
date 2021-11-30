@@ -19,4 +19,4 @@ método.         🐱‍👤
 Ao longo do desenvolvimento deste projeto, criei varios backups, como "sprints", apesar de
 não ter feito push pela plataforma do github, por este motivo existem outros arquivos semelhantes.
 Eu os subi pois achei que talvez pudesse exemplificar melhor o processo de desenvolvimento do
-programa.       📝          :)
+programa.       📝 
