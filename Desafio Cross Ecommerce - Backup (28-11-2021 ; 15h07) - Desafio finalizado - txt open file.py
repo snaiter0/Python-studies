@@ -10,14 +10,14 @@ while (page != -1):
     try:
         webUrl = urllib.request.urlopen(f'http://challenge.dienekes.com.br/api/numbers?page={page}')
 
-        data = webUrl.read()
-        dado = bytes.decode(data)
+        url = webUrl.read()
+        dado = bytes.decode(url)
         semColchete = dado.replace("[", " ")
         semColchete = semColchete.replace("]", " ")
-        semColchete = semColchete.replace('"numbers": ', '"')
-        semColchete = semColchete.replace('{"', "")
-        semColchete = semColchete.replace('}', "")
-        espacoAposVirgula = semColchete.split(",")
+        semNumbers = semColchete.replace('"numbers": ', '"')
+        semChaves = semNumbers.replace('{"', "")
+        semChaves = semChaves.replace('}', "")
+        espacoAposVirgula = semChaves.split(",")
 
 
         def mergeSort(espacoAposVirgula):
@@ -87,7 +87,6 @@ while (page != -1):
         print(f"Paginas sem resposta: {PaginasSemResposta}")
         # quantas paginas tiveram este mesmo erro
         EnderecoDasPaginasComErro.append(page)
-
 
     except ValueError:
         print("O valor null não pode ser convertido em float")
