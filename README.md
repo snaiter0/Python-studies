@@ -4,7 +4,7 @@ Desafio Cross Ecommerce.
 
 A versão final do projeto está nomeada como "desafio finalizado". ✔
 
-O programa tem como seu objetivo, alcançar ETL(Extract, transform and load).
+O programa tem como seu objetivo, efetuar o processo ETL(Extract, transform and load).
 O programa executa ambas as funções, porém o arquivo que está sendo carregado localmente,
 note que após a execução do programa, caso antes não existia um arquivo de texto na pasta 
 de arquivos onde o programa se situa, ele será criado, e lá será armazenada as informações.
