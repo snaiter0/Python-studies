@@ -10,6 +10,8 @@ while (page != -1):
     try:
         webUrl = urllib.request.urlopen(f'http://challenge.dienekes.com.br/api/numbers?page={page}')
 
+        #===============================//================================#
+                        # Execução da extração e tratamento dos dados
         url = webUrl.read()
         dado = bytes.decode(url)
         semColchete = dado.replace("[", " ")
@@ -19,7 +21,10 @@ while (page != -1):
         semChaves = semChaves.replace('}', "")
         espacoAposVirgula = semChaves.split(",")
 
+        # ===============================//================================#
 
+        # ===============================//================================#
+            #Ordenação dos dados
         def mergeSort(espacoAposVirgula):
             if len(espacoAposVirgula) > 1:
 
@@ -62,7 +67,10 @@ while (page != -1):
                     k += 1
 
 
-        # Code to print the list
+        # ===============================//================================#
+
+        # ===============================//================================#
+                    # Exibição da lista dos dados
 
         def printList(espacoAposVirgula):
             for i in range(len(espacoAposVirgula)):
@@ -70,7 +78,10 @@ while (page != -1):
             print()
 
 
-        # Driver Code
+        # ===============================//================================#
+
+        # ===============================//================================#
+                                #Registro dos dados
         if __name__ == '__main__':
             mergeSort(espacoAposVirgula)
             print(f"Pagina atual: {page}")
@@ -81,7 +92,10 @@ while (page != -1):
             f = open("CrossEcommerce.txt", "a")
             f.write(str(espacoAposVirgula))
 
+        # ===============================//================================#
 
+        # ===============================//================================#
+                            #Tratamento de erros de requisição
     except HTTPError:
         PaginasSemResposta +=1
         print(f"Paginas sem resposta: {PaginasSemResposta}")
@@ -91,6 +105,10 @@ while (page != -1):
     except ValueError:
         print("O valor null não pode ser convertido em float")
 
+        # ===============================//================================#
+
+        # ===============================//================================#
+                        #Laço condicional para finalização do programa
     if (len(espacoAposVirgula) <= 1):
         print("")
         print("A lista foi totalmente consumida.")
@@ -100,4 +118,6 @@ while (page != -1):
         print(f"Endereço das paginas sem resposta: {EnderecoDasPaginasComErro}")
         page = -1
         f.close()
+
+    # ===============================//================================#
 
